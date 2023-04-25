@@ -21,6 +21,6 @@ public class Nguoi {
     }
     public void xuat(){
         System.out.println("Ho va Ten: "+ ten+
-                "Giơi tính: "+ gioiTinh);
+                "\nGiơi tính: "+ gioiTinh);
     }
 }

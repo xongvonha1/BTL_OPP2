@@ -5,5 +5,7 @@ public class Main {
         DSDuAn p = new DSDuAn();
         p.NhapDS();
         p.xuatDS();
+        p.NhapGD();
+        p.XuatGD();
     }
 }
