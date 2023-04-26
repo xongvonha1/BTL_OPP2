@@ -28,9 +28,9 @@ public class NhanVien extends Nguoi {
 
     @Override
     public void nhap() {
-        super.nhap();
-        System.out.print("Nhap ma NV: " );
+        System.out.print("Nhap ma NV ghi hoa don giao dich: " );
         maNV = new Scanner(System.in).nextLine();
+        super.nhap();
     }
 
     @Override

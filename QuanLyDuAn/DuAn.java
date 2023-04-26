@@ -17,7 +17,7 @@ public class DuAn {
         this.maDA = new Scanner(System.in).nextLine();
     }
     public void xuat(){
-        System.out.println("\t\t\t Thong tin du an ");
+        System.out.println("\n\t\t\t Thong tin du an ");
         System.out.println("MaDuAn: "+  maDA);
 
     }

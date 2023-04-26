@@ -64,14 +64,14 @@ public class KhachHang extends Nguoi {
 
     @Override
     public void nhap() {
-        super.nhap();
-        System.out.println(" ");
+        System.out.print("Nhap ma khach hang ");
         maKH = new Scanner(System.in).nextLine();
-        System.out.println(" ");
+        super.nhap();
+        System.out.print("Nhap san pham khach hang da mua: ");
         muaH = new Scanner(System.in).nextLine();
-        System.out.println(" ");
+        System.out.print("Nhap so luong san pham: ");
         soLuong = new Scanner(System.in).nextInt();
-        System.out.println(" ");
+        System.out.print("Nhap gia san pham: ");
         gia = new Scanner(System.in).nextInt();
     }
 
@@ -81,7 +81,8 @@ public class KhachHang extends Nguoi {
         System.out.println("Ma khach hang: "+ maKH+ "" +
                 "       Mua sp: "+ muaH+
                 "       So luong: " + soLuong+
-            "           Gia: " + gia +" $"    );
+            "           Gia: " + gia +" $"    +
+                "       Thanh tien: "+ thanhTien()+ " $");
         System.out.println("_________________________");
     }
 }

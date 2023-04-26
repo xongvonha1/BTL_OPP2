@@ -14,9 +14,9 @@ public class Nguoi {
         this.gioiTinh = gioiTinh;
     }
     public void nhap(){
-        System.out.println("Nhap ho ten ");
+        System.out.print("Nhap ho ten ");
         ten = new Scanner(System.in).nextLine();
-        System.out.println("Nhap gioi tinh:  ");
+        System.out.print("Nhap gioi tinh:  ");
         gioiTinh = new Scanner(System.in).nextLine();
     }
     public void xuat(){
