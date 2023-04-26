@@ -3,6 +3,7 @@ package QuanLyDuAn;
 import java.util.Scanner;
 
 public class SanPham extends DuAn{
+    public float ThanhTien;
     private String maSP;
     private String tenSP;
     private int  soLuong;

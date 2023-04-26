@@ -37,11 +37,6 @@ public class DSDuAn {
             d.xuat();
         }
     }
-    public void xuatDSSP(){
-        for(SanPham sp: dssp){
-            sp.xuat();
-        }
-    }
     public void NhapGD(){
         System.out.print("Nhap so lan khach hang giao dich: ");
         int m = new Scanner(System.in).nextInt();
@@ -83,16 +78,18 @@ public class DSDuAn {
     public void tongChiPhiDA(){
         float sum = 0;
         for(DuAn sp: list){
-            sum+= sp.TongChiPhi();
+            if( sp instanceof SanPham){
+                sum+=((SanPham) sp).ThanhTien();
+            }
         }
-        System.out.println("Tong chi cua cac du an trong danh sach la: "+ sum);;
+        System.out.println("Tong chi cua cac du an trong danh sach la: "+ sum+ " $");
     }
     public void sapXepDAGGiamDan(){
-        Collections.sort(this.dssp, new Comparator<SanPham>() {
+        Collections.sort(this.dssp, new Comparator<DuAn>() {
             @Override
-            public int compare( SanPham sp1, SanPham sp2) {
-                if(sp1.ThanhTien()< sp2.ThanhTien()){return 1;}
-                    else {return 0;}
+            public int compare( DuAn sp1, DuAn sp2) {
+                if(((SanPham)sp1).ThanhTien()< ((SanPham)sp2).ThanhTien()){return 1;}
+                    else {return -1;}
             }
         });
     }

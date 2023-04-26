@@ -11,10 +11,10 @@ public class Main {
                 "3. Them du an vao. \n" +
                 "4. So luong du an trong danh sach. \n" +
                 "5. Tong chi phi cac du an trong danh sach. \n" +
-                "5. Sắp xếp ds theo thu tu giam dan. \n" +
-                "6. Nhap hoa don giao dich khach hang cua cong ty \n" +
-                "7. Xuat hoa don giao dich khach hang cua cong ty. \n" +
-                "8. Them hoa don giao dich. \n " +
+                "6. Sắp xếp ds theo thu tu giam dan. \n" +
+                "7. Nhap hoa don giao dich khach hang cua cong ty \n" +
+                "8. Xuat hoa don giao dich khach hang cua cong ty. \n" +
+                "9. Them hoa don giao dich. \n " +
                 "" +
                 ""+
                 "Moi ban chon: " +
@@ -45,17 +45,20 @@ public class Main {
                 System.out.println("");
             }
             else if(luachon==5){
-               p.sapXepDAGGiamDan();
-               p.xuatDSSP();
+                System.out.println("\n_________________________");
+                p.tongChiPhiDA();
             }
-             else if (luachon==6){
+            else if(luachon==6){
+                p.sapXepDAGGiamDan();
+                p.xuatDS();
+            }
+             else if (luachon==7){
                 p.NhapGD();
             }
-            else if(luachon==7){
+            else if(luachon==8){
                 p.XuatGD();
             }
-            else if(luachon==5){}
-            ;
+            else if(luachon==5){};
 
         }while (luachon!=0);
     }

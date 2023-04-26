@@ -20,9 +20,5 @@ public class DuAn {
         System.out.println("\n\t\t\t Thong tin du an ");
         System.out.println("MaDuAn: "+  maDA);
     }
-    public float TongChiPhi(){
-        SanPham sp = new SanPham();
-        return sp.ThanhTien();
-    }
 
 }
