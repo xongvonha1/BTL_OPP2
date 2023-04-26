@@ -1,5 +1,6 @@
 package QuanLyDuAn;
 
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -81,23 +82,44 @@ public class DSDuAn {
                 sum+=((SanPham) sp).ThanhTien();
             }
         }
-        System.out.println("Tong chi cua cac du an trong danh sach la: "+ sum+ " $");
+        System.out.println("Tong chi cua cac du an trong danh sach la: "+ sum+ " $ \n\n");
     }
     public void sapXepDAGGiamDan(){
-        Collections.sort(this.list, new Comparator<DuAn>() {
-            @Override
-            public int compare( DuAn sp1, DuAn sp2) {
-                if(sp1 instanceof SanPham && sp2 instanceof SanPham){
-                    return 1;
-                }
-                if (sp1 instanceof SanPham && sp2 instanceof SanPham){
-                    return -1;
-                }
-                return 0;
+        Collections.sort(this.list,
+                new Comparator<DuAn>() {
 
-            }
-        });
+                    @Override
+                    public int compare( DuAn sp1, DuAn sp2) {
+                        if(((SanPham)sp1).ThanhTien()==((SanPham)sp2).ThanhTien()){
+                            return 0;
+                        }
+                        else if (((SanPham)sp1).ThanhTien()>((SanPham)sp2).ThanhTien()){
+                            return 1;
+                        }
+                        else {return -1;}
+
+                    }
+                });
         xuatDS();
+    }
+    public void  LuuFileDSDA() throws FileNotFoundException, IOException {
+        File f = new File("DSDA.dat");
+        FileOutputStream fout = new FileOutputStream(f);
+        ObjectOutputStream objout = new ObjectOutputStream(fout);
+        objout.writeObject(list);
+        objout.close();
+        fout.close();
+        System.out.println("\nLuu file thanh cong: ");
+    }
+    public void DocFileDSDA() throws FileNotFoundException, IOException, ClassNotFoundException {
+        File f =new File("DSDA.dat");
+
+        FileInputStream fin = new FileInputStream(f);
+        ObjectInputStream objin = new ObjectInputStream(fin);
+        list = new ArrayList<DuAn>();
+        list = (ArrayList)objin.readObject();
+        objin.close();
+        System.out.println("\nDoc file thanh cong.");
     }
 
 

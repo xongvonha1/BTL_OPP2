@@ -1,8 +1,9 @@
 package QuanLyDuAn;
 
+import java.io.Serializable;
 import java.util.Scanner;
 
-public class DuAn {
+public class DuAn implements Serializable {
     protected String maDA;
 
     public DuAn(String maDA) {

@@ -1,8 +1,9 @@
 package QuanLyDuAn;
 
+import java.io.Serializable;
 import java.util.Scanner;
 
-public class SanPham extends DuAn{
+public class SanPham extends DuAn implements Serializable {
     public float ThanhTien;
     private String maSP;
     private String tenSP;
