@@ -78,7 +78,7 @@ public class KhachHang extends Nguoi {
     @Override
     public void xuat() {
         super.xuat();
-        System.out.println("Ma khach hang: "+ maKH+ "" +
+        System.out.println("\nMa khach hang: "+ maKH+ "" +
                 "       Mua sp: "+ muaH+
                 "       So luong: " + soLuong+
             "           Gia: " + gia +" $"    +

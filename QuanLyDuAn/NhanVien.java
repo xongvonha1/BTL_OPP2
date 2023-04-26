@@ -36,8 +36,10 @@ public class NhanVien extends Nguoi {
     @Override
     public void xuat() {
         System.out.println("\n\t\tLich su thong tin giao dich: ");
+        System.out.println("\nMaNV ghi hoa don: "+ maNV);
         super.xuat();
-        System.out.println("\nMaNV ghi hoa don: "+ maNV
-                +"\nPhongBan: "+ phongBan );
+        System.out.println("PhongBan: "+ phongBan);
+        System.out.println("");
+
     }
 }
