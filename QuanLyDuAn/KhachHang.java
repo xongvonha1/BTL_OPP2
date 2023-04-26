@@ -3,7 +3,7 @@ package QuanLyDuAn;
 import java.util.Scanner;
 
 public class KhachHang extends Nguoi {
-    private String maKH;
+    private String maGD;
     private String muaH;
     private int soLuong;
     private int gia;
@@ -11,17 +11,17 @@ public class KhachHang extends Nguoi {
     public KhachHang() {
     }
 
-    public KhachHang(String maKH, String muaH, int soLuong, int gia) {
-        this.maKH = maKH;
+    public KhachHang(String maGD, String muaH, int soLuong, int gia) {
+        this.maGD = maGD;
         this.muaH = muaH;
         this.soLuong = soLuong;
         this.gia = gia;
     }
 
-    public KhachHang(String ten, String gioiTinh, String maKH,
+    public KhachHang(String ten, String gioiTinh, String maGD,
                      String muaH, int  soLuong, int gia) {
         super(ten, gioiTinh);
-        this.maKH = maKH;
+        this.maGD = maGD;
         this.muaH = muaH;
         this.soLuong = soLuong;
         this.gia = gia;
@@ -31,11 +31,11 @@ public class KhachHang extends Nguoi {
     }
 
     public String getMaKH() {
-        return maKH;
+        return maGD;
     }
 
-    public void setMaKH(String maKH) {
-        this.maKH = maKH;
+    public void setMaKH(String maGD) {
+        this.maGD = maGD;
     }
 
     public String getMuaH() {
@@ -64,8 +64,8 @@ public class KhachHang extends Nguoi {
 
     @Override
     public void nhap() {
-        System.out.print("Nhap ma khach hang ");
-        maKH = new Scanner(System.in).nextLine();
+        System.out.print("Nhap ma giao dich don hang: ");
+        maGD = new Scanner(System.in).nextLine();
         super.nhap();
         System.out.print("Nhap san pham khach hang da mua: ");
         muaH = new Scanner(System.in).nextLine();
@@ -78,7 +78,7 @@ public class KhachHang extends Nguoi {
     @Override
     public void xuat() {
         super.xuat();
-        System.out.println("\nMa khach hang: "+ maKH+ "" +
+        System.out.println("\nMa khach hang: "+ maGD+ "" +
                 "       Mua sp: "+ muaH+
                 "       So luong: " + soLuong+
             "           Gia: " + gia +" $"    +

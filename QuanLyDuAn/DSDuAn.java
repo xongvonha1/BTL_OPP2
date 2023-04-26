@@ -1,11 +1,14 @@
 package QuanLyDuAn;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Scanner;
 
 public class DSDuAn {
     private ArrayList<DuAn> list ;
     ArrayList<Nguoi> DS= new ArrayList<Nguoi>();
+    ArrayList<SanPham> dssp= new ArrayList<SanPham>();
 
     public DSDuAn() {
         this.list = new ArrayList<DuAn>();
@@ -34,6 +37,11 @@ public class DSDuAn {
             d.xuat();
         }
     }
+    public void xuatDSSP(){
+        for(SanPham sp: dssp){
+            sp.xuat();
+        }
+    }
     public void NhapGD(){
         System.out.print("Nhap so lan khach hang giao dich: ");
         int m = new Scanner(System.in).nextInt();
@@ -53,5 +61,41 @@ public class DSDuAn {
             n.xuat();
         }
     }
+    public void themDSDA(){
+        SanPham sp = new SanPham();
+        NhaCungCap ncc = new NhaCungCap();
+        sp.nhap();
+        ncc.nhap();
+        this.list.add(sp);
+        this.list.add(ncc);
+    }
+    public void themDSHD(){
+        NhanVien nv = new NhanVien();
+        KhachHang kh = new KhachHang();
+        nv.nhap();
+        kh.nhap();
+        DS.add(nv);
+        DS.add(kh);
+    }
+    public int soLuongDSDA(){
+        return this.list.size();
+    }
+    public void tongChiPhiDA(){
+        float sum = 0;
+        for(DuAn sp: list){
+            sum+= sp.TongChiPhi();
+        }
+        System.out.println("Tong chi cua cac du an trong danh sach la: "+ sum);;
+    }
+    public void sapXepDAGGiamDan(){
+        Collections.sort(this.dssp, new Comparator<SanPham>() {
+            @Override
+            public int compare( SanPham sp1, SanPham sp2) {
+                if(sp1.ThanhTien()< sp2.ThanhTien()){return 1;}
+                    else {return 0;}
+            }
+        });
+    }
+
 
 }
