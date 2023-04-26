@@ -8,7 +8,6 @@ import java.util.Scanner;
 public class DSDuAn {
     private ArrayList<DuAn> list ;
     ArrayList<Nguoi> DS= new ArrayList<Nguoi>();
-    ArrayList<SanPham> dssp= new ArrayList<SanPham>();
 
     public DSDuAn() {
         this.list = new ArrayList<DuAn>();
@@ -85,13 +84,20 @@ public class DSDuAn {
         System.out.println("Tong chi cua cac du an trong danh sach la: "+ sum+ " $");
     }
     public void sapXepDAGGiamDan(){
-        Collections.sort(this.dssp, new Comparator<DuAn>() {
+        Collections.sort(this.list, new Comparator<DuAn>() {
             @Override
             public int compare( DuAn sp1, DuAn sp2) {
-                if(((SanPham)sp1).ThanhTien()< ((SanPham)sp2).ThanhTien()){return 1;}
-                    else {return -1;}
+                if(sp1 instanceof SanPham && sp2 instanceof SanPham){
+                    return 1;
+                }
+                if (sp1 instanceof SanPham && sp2 instanceof SanPham){
+                    return -1;
+                }
+                return 0;
+
             }
         });
+        xuatDS();
     }
 
 

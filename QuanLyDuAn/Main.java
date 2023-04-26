@@ -50,7 +50,6 @@ public class Main {
             }
             else if(luachon==6){
                 p.sapXepDAGGiamDan();
-                p.xuatDS();
             }
              else if (luachon==7){
                 p.NhapGD();
